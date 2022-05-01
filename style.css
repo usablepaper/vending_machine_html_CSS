@@ -1,0 +1,369 @@
+body {
+    background-color: #eae8fe;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 386px;
+    height: 180px;
+    background-image: url("../images/logo.png");
+    background-size: cover;
+    z-index: 10;
+}
+
+.machine-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 250px;
+    gap: 28px;
+    margin-bottom: 100px;
+}
+
+.vending-machine {
+    background-color: white;
+    width: 360px;
+    padding: 31px 27px 28px 27px;
+    box-sizing: border-box;
+}
+
+.vending-machine-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.vending-machine-list .box {
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.278);
+    cursor: pointer;
+}
+
+.vending-machine-list .box.sold-out {
+    pointer-events: none;
+}
+
+.vending-machine-list .box.sold-out::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    border-radius: 10px;
+    background: no-repeat center/ 60px 46px url("./images/Sold-out.svg")
+        rgba(0, 0, 0, 0.7);
+}
+
+.vending-machine-list .box.sold-out::after {
+    content: "품절";
+    overflow: hidden;
+    position: absolute;
+    text-indent: -9999px;
+    line-height: 0;
+    font-size: 1px;
+    color: transparent;
+}
+
+.cola-name {
+    font-size: 9px;
+    font-weight: 500;
+}
+
+.cola-price {
+    text-align: center;
+    padding: 5px 15px;
+    margin-bottom: 9px;
+    background-color: #6327fe;
+    border-radius: 50px;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.vending-machine-list .box:hover {
+    outline: 3px solid #6327fe;
+}
+
+.box {
+    position: relative;
+    overflow: hidden;
+}
+.box ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+}
+.cola-img {
+    width: 35px;
+    height: 65px;
+    padding-top: 10px;
+}
+
+.changes-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 11px;
+    gap: 12px;
+}
+
+.changes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px;
+    line-height: 13px;
+    width: 200px;
+    background-color: #eae8fe;
+    border-radius: 5px;
+}
+
+.change-button {
+    width: 94px;
+    font-weight: 500;
+    font-size: 13px;
+    border: 0;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.278);
+    cursor: pointer;
+}
+
+.push-money-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 11px;
+}
+
+.push-money {
+    padding: 8.25px 10px;
+    width: 200px;
+    color: #bdbdbd;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+}
+.push-money::placeholder {
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.push-money:focus {
+    outline: none;
+    color: black;
+    text-align: right;
+}
+
+.push-money-button {
+    width: 94px;
+    font-weight: 500;
+    font-size: 13px;
+    border: 0;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.278);
+    cursor: pointer;
+}
+
+.cart-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.cart-container {
+    width: 200px;
+    height: 106px;
+    background-color: #eae8fe;
+    overflow: auto;
+    padding: 12px;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 79px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px 10px white;
+    border: solid 3px transparent;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.cart-get-button {
+    width: 94px;
+    background-color: #6327fe;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.278);
+    cursor: pointer;
+}
+
+.my-status {
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.my-money-section {
+    background-color: white;
+    padding: 9px 27px;
+}
+
+.my-money {
+    background-color: #eae8fe;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 10px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.my-money div:nth-child(2) {
+    font-weight: 700;
+}
+
+.selected-container {
+    background-color: white;
+    padding: 27px;
+}
+
+.selected-container .selected-list-title {
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.selected-container .selected-list-container {
+    background-color: #eae8fe;
+    border-radius: 5px;
+    border: 1px solid #bdbdbd;
+    margin-bottom: 6px;
+    height: 364px;
+}
+
+.selected-container .selected-list {
+    border-radius: 5px;
+    margin: 0;
+    padding: 12px;
+}
+
+.selected-container .total {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 17.38px;
+    text-align: right;
+}
+
+.selected-type-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.selected-type-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 6px;
+    padding: 8px;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+
+.selected-type-list li .selected-cola-img {
+    width: 20px;
+}
+
+.selected-list-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.selected-list-container::-webkit-scrollbar-thumb {
+    height: 79px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px 10px white;
+    border: solid 3px transparent;
+}
+
+.selected-list-container::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.selected-cola {
+    font-size: 9px;
+    padding-left: 10px;
+    flex-grow: 1;
+}
+
+.selected-count {
+    width: 30px;
+    font-size: 14px;
+    padding: 8px;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 680px) {
+    body {
+        background-color: #fff;
+    }
+    .header {
+        width: 166px;
+        height: 71.12px;
+    }
+
+    .machine-container {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px;
+        gap: 0px;
+        margin-bottom: 100px;
+    }
+
+    .vending-machine {
+        padding-top: 0;
+        padding-bottom: 20px;
+    }
+
+    .my-money-section {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .my-status {
+        gap: 41px;
+    }
+
+    .selected-container {
+        padding-top: 0;
+    }
+}
